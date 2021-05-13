@@ -1,0 +1,14 @@
+<h1>List de liste</h1>
+
+<ul>
+<% @lists.each do |list| %>
+  <li>
+  <%= list.name %>
+  </li>
+
+
+
+<% end %>
+</ul>
+
+<%= link_to  "Add a list", new_list_path %>
