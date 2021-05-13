@@ -1,3 +1,25 @@
-<h1>Details de <%= @list.name %></h1>
+<div class="banner"
+  style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1535016120720-40c646be5580?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">
+  <div class="container">
+    <h1><strong>
+        <%= @list.name %>
+      </strong></h1>
+    <!-- <p>Change your life en creant des listes de movies avec des bookmarks</p> -->
+  </div>
+</div>
 
-<%= link_to  "Revenir à la liste de liste", lists_path %>
+<h1>Details de <%= @list.name %>
+</h1>
+
+<div class="movie-cards container row">
+  <% @movies.each do |movie| %>
+    <div class="movie-card col">
+      <img src=<%=movie.poster_url%> alt="" style="height:230px">
+      <p class="flex-wrap">
+        <%= movie.title %>
+      </p>
+    </div>
+    <% end %>
+</div>
+
+<%= link_to "Revenir à la liste de liste" , lists_path %>

@@ -1,14 +1,22 @@
-<h1>List de liste</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1535016120720-40c646be5580?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">
+  <div class="container">
+    <h1>Ajouter vos <strong>listes</strong> to <strong>comme vous voulez</strong>!</h1>
+    <p>Change your life en creant des listes de movies avec des bookmarks</p>
+  </div>
+  </div>
+  <div class="container">
+    <h1 class ="text-center">List de liste</h1>  
+    <ul>
+      <% @lists.each do |list| %>
 
-<ul>
-<% @lists.each do |list| %>
-  <li>
-  <%= list.name %>
-  </li>
-
-
-
-<% end %>
-</ul>
-
-<%= link_to  "Add a list", new_list_path %>
+      <div class="card-product ">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><%= link_to  "#{list.name}", list_path(list.id) %></h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+        </div>
+      </div>
+      <% end %>
+    </ul>
+    <%= link_to "Add a list" , new_list_path , :class => "btn btn-primary"%>
+  </div>

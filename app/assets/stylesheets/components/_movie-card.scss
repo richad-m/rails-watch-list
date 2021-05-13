@@ -1,0 +1,13 @@
+.movie-card {
+  width: 160px;
+
+  img {
+    object-fit: cover;
+  }
+
+  p {
+    font-weight: bolder;
+    text-align: center;
+    width: 80%;
+  }
+}

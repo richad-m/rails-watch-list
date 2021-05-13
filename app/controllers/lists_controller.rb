@@ -6,6 +6,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @movies = Movie.first(5)
   end
 
   def new
