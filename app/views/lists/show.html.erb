@@ -8,18 +8,21 @@
   </div>
 </div>
 
-<h1>Details de <%= @list.name %>
+<h1>Your <%= @list.name %>'s bookmarks'
 </h1>
 
-<div class="movie-cards container row">
+<div class="movie-cards container d-flex flex-wrap">
   <% @list.bookmarks.each do |bk| %>
-    <div class="movie-card col">
+    <div class="movie-card m-3">
       <img src=<%=bk.movie.poster_url%> alt="" style="height:230px">
-      <p class="flex-wrap">
+      <h6 class="">
         <%= bk.movie.title %>
-      </p>
+      </h6>
+      <p><em>
+      <%= bk.comment %>
+      </em></p>
     </div>
     <% end %>
 </div>
-<%= link_to "Ajouter un bookmark" , new_list_bookmark_path(@list.id) %>
-<%= link_to "Revenir à la liste de liste" , lists_path %>
+<%= link_to "<i class='fas fa-backward'></i> Back to lists".html_safe, lists_path,  :class=> "btn btn-primary"%>
+<%= link_to "<i class='fas fa-bookmark'></i> Add bookmark".html_safe , new_list_bookmark_path(@list.id), :class=> "btn btn-primary" %>

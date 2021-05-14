@@ -6,7 +6,7 @@
   </div>
 </div>
 <div class="container">
-  <h1 class="text-center">Tes playlists de Booba</h1>
+  <h1 class="text-center my-2">Tes playlists de Booba</h1>
   <ul>
     <% @lists.each do |list| %>
 
@@ -15,12 +15,15 @@
           <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
             </li>
             <% end %>
-              <div class="card-product-infos">
+              <div class="card-product-infos w-100">
                 <h2>
                   <%= link_to "#{list.name}" , list_path(list.id) %>
                 </h2>
-                <p>Les meilleurs sons de <strong>Booba</strong>.</p>
-                <%= link_to "Delete" , list_path(list.id), method: :delete, data: { confirm: "Are you sure?" } %>
+                <div class="d-flex justify-content-between">
+                  <p>Les meilleurs sons de <strong>Booba</strong>.</p>
+                  <%= link_to "<i class='far fa-trash-alt'></i>" .html_safe , list_path(list.id), method: :delete, data:
+                    { confirm: "Are you sure?" } %>
+                </div>
 
               </div>
       </div>
