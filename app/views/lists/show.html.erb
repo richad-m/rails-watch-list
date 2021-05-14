@@ -12,14 +12,14 @@
 </h1>
 
 <div class="movie-cards container row">
-  <% @movies.each do |movie| %>
+  <% @list.bookmarks.each do |bk| %>
     <div class="movie-card col">
-      <img src=<%=movie.poster_url%> alt="" style="height:230px">
+      <img src=<%=bk.movie.poster_url%> alt="" style="height:230px">
       <p class="flex-wrap">
-        <%= movie.title %>
+        <%= bk.movie.title %>
       </p>
     </div>
     <% end %>
 </div>
-
+<%= link_to "Ajouter un bookmark" , new_list_bookmark_path(@list.id) %>
 <%= link_to "Revenir à la liste de liste" , lists_path %>
