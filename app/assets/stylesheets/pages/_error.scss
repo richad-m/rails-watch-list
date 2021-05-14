@@ -1,0 +1,24 @@
+body {
+
+  background: red;
+  position: relative;
+}
+
+.booba {
+  animation: 4s linear 0s infinite alternate alert;
+  // animation-name: alert;
+  // animation-duration: 4s;
+  position: absolute;
+}
+
+@keyframes alert {
+  0% {left: 0%; }
+  10% { left: 25%; }
+  28% { left: 50%; }
+  50% { left: 90%; }
+  60% {left: 80%; }
+  80% { left: 70%; }
+  90% { left: 50%; }
+  95% { left: 25%; }
+  100% { left: 0%; }
+}

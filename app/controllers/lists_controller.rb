@@ -29,6 +29,10 @@ class ListsController < ApplicationController
     redirect_to lists_path
   end
 
+  def error
+
+  end
+
   private
 
   def list_params
