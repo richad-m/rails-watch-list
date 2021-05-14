@@ -1,6 +1,6 @@
 <h1>Create a list</h1>
 
-<%= form_for @list do |f| %>
+<%= simple_form_for @list do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.input :photo, as: :file %>
