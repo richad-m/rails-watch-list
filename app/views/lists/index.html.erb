@@ -10,7 +10,9 @@
       <% @lists.each do |list| %>
 
       <div class="card-product ">
-        <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+        <% if list.photo.attached? %>
+          <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
         <div class="card-product-infos">
           <h2><%= link_to  "#{list.name}", list_path(list.id) %></h2>
           <p>Les meilleurs sons de <strong>Booba</strong>.</p>
